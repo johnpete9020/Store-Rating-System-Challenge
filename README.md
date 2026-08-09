@@ -15,14 +15,14 @@ Tech Stack:
 
 ---
 
-## 🔑 Default Admin Account Credentials
+## Default Admin Account Credentials
 You can log in immediately using the pre-configured administrator account:
 * **E-Mail:** `admin@example.com`
 * **Password:** `Password1`
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 ```text
 Full Stack Challenge/
 ├── store-rating-app/       # React Frontend (Vite)
