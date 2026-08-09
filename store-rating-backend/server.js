@@ -1,12 +1,18 @@
 const express = require('express');
 const cors = require('cors');
+const allowedOrigins = [
+  'http://localhost:5173', // for local development
+  'store-rating-system-challenge.vercel.app' // <-- PUT YOUR EXACT VERCEL URL HERE
+];
 require('dotenv').config();
 
 const db = require('./config/db');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigins
+}));
 app.use(express.json());
 
 const authRoutes = require('./routes/auth');
@@ -25,7 +31,9 @@ const ownerRoutes = require('./routes/owner');
 app.use('/api/owner', ownerRoutes);
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigins
+}));
 app.use(express.json());
 
 // Test Database Connection Route
