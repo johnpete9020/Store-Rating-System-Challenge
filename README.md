@@ -2,10 +2,8 @@
 
 A full-stack web application built to manage and rate stores, featuring distinct user roles (Admin, Store Owner, and Normal User) with secure authentication and database management.
 
-Live Demos:
-**Frontend** (Vercel): Live App URL: https://store-rating-system-challenge.vercel.app/
-**Backend API** (Render): Live API URL: https://store-rating-backend-g8fe.onrender.com
-
+Live Demo:
+**(Vercel)**: Live App URL: https://store-rating-system-challenge.vercel.app/
 
 
 Tech Stack:
@@ -20,6 +18,7 @@ You can log in immediately using the pre-configured administrator account:
 * **E-Mail:** `admin@example.com`
 * **Password:** `Password1`
 
+**Note:** Initial Login might take time because it is running on a Free instance of Render
 ---
 
 ## Project Structure
@@ -27,3 +26,4 @@ You can log in immediately using the pre-configured administrator account:
 Full Stack Challenge/
 ├── store-rating-app/       # React Frontend (Vite)
 └── store-rating-backend/   # Node.js / Express Backend
+
