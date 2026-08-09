@@ -12,7 +12,7 @@ const UpdatePassword = () => {
     try {
       setMessage('');
       setError('');
-      const response = await axios.put('`${import.meta.env.VITE_API_URL}/users/update-password', { 
+      const response = await axios.put(`${import.meta.env.VITE_API_URL}/users/update-password`, { 
         newPassword: data.newPassword 
       });
       setMessage(response.data.message);

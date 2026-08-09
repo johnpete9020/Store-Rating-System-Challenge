@@ -25,14 +25,14 @@ const AdminDashboard = () => {
   // Fetch Core Data
   const fetchStats = async () => {
     try {
-      const response = await axios.get('`${import.meta.env.VITE_API_URL}/admin/stats');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/admin/stats`);
       setStats(response.data);
     } catch (err) { setError('Failed to load dashboard statistics.'); }
   };
 
   const fetchOwners = async () => {
     try {
-      const response = await axios.get('`${import.meta.env.VITE_API_URL}/admin/users?role=store_owner');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/admin/users?role=store_owner`);
       setOwners(response.data);
     } catch (err) { console.error('Failed to load owners list.'); }
   };
@@ -40,14 +40,14 @@ const AdminDashboard = () => {
   // Fetch Data Tables with Filters applied
   const fetchUsersList = async () => {
     try {
-      const response = await axios.get('`${import.meta.env.VITE_API_URL}/admin/users', { params: userFilters });
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/admin/users`, { params: userFilters });
       setUsersList(response.data);
     } catch (err) { console.error(err); }
   };
 
   const fetchStoresList = async () => {
     try {
-      const response = await axios.get('`${import.meta.env.VITE_API_URL}/admin/stores', { params: storeFilters });
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/admin/stores`, { params: storeFilters });
       setStoresList(response.data);
     } catch (err) { console.error(err); }
   };
@@ -64,7 +64,7 @@ const AdminDashboard = () => {
   // Form Submissions
   const onAddStore = async (data) => {
     try {
-      await axios.post('`${import.meta.env.VITE_API_URL}/stores', data);
+      await axios.post(`${import.meta.env.VITE_API_URL}/stores`, data);
       alert('Store added successfully!');
       resetStore();
       fetchStats();
@@ -74,7 +74,7 @@ const AdminDashboard = () => {
 
   const onAddUser = async (data) => {
     try {
-      await axios.post('`${import.meta.env.VITE_API_URL}/admin/users', data);
+      await axios.post(`${import.meta.env.VITE_API_URL}/admin/users`, data);
       alert('User created successfully!');
       resetUser();
       fetchStats();

@@ -13,7 +13,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     try {
       setServerError('');
-      const response = await axios.post('`${import.meta.env.VITE_API_URL}/auth/login', data);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, data);
       
       const { token, user } = response.data;
       

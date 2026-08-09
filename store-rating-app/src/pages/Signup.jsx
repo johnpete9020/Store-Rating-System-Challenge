@@ -11,7 +11,7 @@ const Signup = () => {
   const onSubmit = async (data) => {
     try {
       setServerError('');
-      await axios.post('`${import.meta.env.VITE_API_URL}/auth/register', data);
+      await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, data);
       alert('Registration successful! You can now log in.');
       navigate('/login');
     } catch (err) {
