@@ -10,9 +10,7 @@ const db = require('./config/db');
 
 const app = express();
 
-app.use(cors({
-  origin: allowedOrigins
-}));
+app.use(cors());
 app.use(express.json());
 
 const authRoutes = require('./routes/auth');
@@ -32,7 +30,15 @@ app.use('/api/owner', ownerRoutes);
 
 // Middleware
 app.use(cors({
-  origin: allowedOrigins
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      return callback(new Error('CORS policy violation: This site not allowed from this origin.'), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true
 }));
 app.use(express.json());
 
