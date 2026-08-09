@@ -17,7 +17,7 @@ const StoreList = () => {
   const fetchStores = async () => {
     try {
       setError('');
-      const response = await axios.get(`http://localhost:5000/api/stores`, {
+      const response = await axios.get(``${import.meta.env.VITE_API_URL}/stores`, {
         params: { search, sortBy, order }
       });
       setStores(response.data);
@@ -33,7 +33,7 @@ const StoreList = () => {
   // Handle Rating Submission / Modification
   const handleRate = async (storeId, ratingValue) => {
     try {
-      await axios.post(`http://localhost:5000/api/stores/${storeId}/rate`, {
+      await axios.post(``${import.meta.env.VITE_API_URL}/stores/${storeId}/rate`, {
         rating: parseInt(ratingValue)
       });
       alert('Rating submitted successfully!');

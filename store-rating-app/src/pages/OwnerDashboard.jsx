@@ -13,7 +13,7 @@ const OwnerDashboard = () => {
   useEffect(() => {
     const fetchDashboard = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/owner/dashboard');
+        const response = await axios.get('`${import.meta.env.VITE_API_URL}/owner/dashboard');
         setDashboardData(response.data);
       } catch (err) {
         setError(err.response?.data?.error || 'Failed to load dashboard.');
