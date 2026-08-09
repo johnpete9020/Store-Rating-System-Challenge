@@ -16,7 +16,7 @@ Tech Stack:
 ## Default Admin Account Credentials
 You can log in immediately using the pre-configured administrator account:
 * **E-Mail:** `admin@example.com`
-* **Password:** `Password1`
+* **Password:** `Password@1`
 
 **Note:** Initial Login might take time because it is running on a Free instance of Render
 ---
